@@ -1,5 +1,9 @@
-let sum = 0;
-for(i=0;i<1000;i++){
-  if(i%3 === 0 || i%5 === 0){sum+=i}
+let sum = 2;
+let x=1,y=2;
+while(y<4000000){
+  let z = x+y;
+  x = y;
+  y = z;
+  if(z%2===0){sum+=z;}
 }
 console.log(sum);
