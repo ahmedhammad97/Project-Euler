@@ -1,12 +1,16 @@
-let input = 600851475143;
-for(i=2; i<input; i++){
-  if(input%i === 0 && isPrime(input/i)){console.log(input/i); break;}
+let max = -1;
+
+for(i=999; i>0; i--){
+  for(k=i; k>0; k--){
+    let product = i*k;
+    if( product>max && isPalindrom(String(product)) ){max=product}
+  }
 }
+console.log(max);
 
-
-
-function isPrime (num){
-    for(let i = 2, s = Math.sqrt(num); i <= s; i++)
-        if(num % i === 0) return false;
-    return num !== 1;
+function isPalindrom(str){
+  var re = /[\W_]/g;
+  let lowRegStr = str.toLowerCase().replace(re, '');
+  let reverseStr = lowRegStr.split('').reverse().join('');
+  return reverseStr === lowRegStr;
 }
