@@ -1,16 +1,9 @@
-let max = -1;
-
-for(i=999; i>0; i--){
-  for(k=i; k>0; k--){
-    let product = i*k;
-    if( product>max && isPalindrom(String(product)) ){max=product}
+let num = 20*20;
+while(true){
+  let flag = true;
+  for(i=20; i>1; i--){
+    if(num%i !== 0){flag=false; break;}
   }
-}
-console.log(max);
-
-function isPalindrom(str){
-  var re = /[\W_]/g;
-  let lowRegStr = str.toLowerCase().replace(re, '');
-  let reverseStr = lowRegStr.split('').reverse().join('');
-  return reverseStr === lowRegStr;
+  if(flag){console.log(num); break;}
+  num++;
 }
